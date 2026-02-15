@@ -342,12 +342,28 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 0.6s ease-out both;
         }
 
-        .step-card:nth-child(1) { animation-delay: 0.1s; }
-        .step-card:nth-child(2) { animation-delay: 0.2s; }
-        .step-card:nth-child(3) { animation-delay: 0.3s; }
+        .step-card:nth-child(1) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.1s;
+        }
+        .step-card:nth-child(2) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.2s;
+        }
+        .step-card:nth-child(3) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.3s;
+        }
+
+        .step-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .step-card::before {
             content: '';
@@ -462,13 +478,33 @@
             padding: 2rem;
             text-align: center;
             transition: all 0.4s ease;
-            animation: fadeInUp 0.6s ease-out both;
         }
 
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(1) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.1s;
+        }
+        .feature-card:nth-child(2) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.2s;
+        }
+        .feature-card:nth-child(3) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.3s;
+        }
+        .feature-card:nth-child(4) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.4s;
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .feature-card:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -517,14 +553,34 @@
             box-shadow: var(--shadow-sm);
             transition: all 0.4s ease;
             position: relative;
-            animation: fadeInUp 0.6s ease-out both;
             cursor: pointer;
         }
 
-        .category-card:nth-child(1) { animation-delay: 0.1s; }
-        .category-card:nth-child(2) { animation-delay: 0.2s; }
-        .category-card:nth-child(3) { animation-delay: 0.3s; }
-        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        .category-card:nth-child(1) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.1s;
+        }
+        .category-card:nth-child(2) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.2s;
+        }
+        .category-card:nth-child(3) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.3s;
+        }
+        .category-card:nth-child(4) { 
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out 0.4s;
+        }
+
+        .category-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .category-card::before {
             content: '';
@@ -773,18 +829,6 @@
             }
         }
 
-        /* Scroll Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
@@ -993,8 +1037,8 @@
     <script>
         // Scroll Animation Observer
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1007,7 +1051,6 @@
 
         // Observe all cards
         document.querySelectorAll('.step-card, .feature-card, .category-card').forEach(card => {
-            card.classList.add('animate-on-scroll');
             observer.observe(card);
         });
 
