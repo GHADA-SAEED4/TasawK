@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسوق تقني | وجهتك الأولى للتقنية في السعودية</title>
+    <title>تسوق تقني | صيانة جوالات متنقلة في الرياض</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -83,13 +83,6 @@
             object-fit: contain;
         }
 
-        .logo-text-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-            align-items: center;
-        }
-
         .logo {
             font-family: 'Cairo', sans-serif;
             font-size: 1.8rem;
@@ -98,12 +91,14 @@
             text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
         }
 
-        .logo-subtitle {
-            font-size: 0.75rem;
-            color: var(--highlight);
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-align: center;
+        .maroof-badge {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .maroof-badge:hover {
+            transform: scale(1.1);
         }
 
         /* Hero Section */
@@ -173,38 +168,12 @@
             margin-right: auto;
         }
 
-        .hero-badges {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+        .hero-image {
+            max-width: 500px;
+            width: 100%;
+            margin: 3rem auto 0;
             animation: fadeInUp 0.8s ease-out 0.5s both;
-            justify-content: center;
-        }
-
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            color: var(--highlight);
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .badge:hover {
-            background: rgba(0, 217, 255, 0.2);
-            border-color: var(--highlight);
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
-        }
-
-        .badge-icon {
-            font-size: 1.2rem;
+            filter: drop-shadow(0 10px 40px rgba(0, 217, 255, 0.3));
         }
 
         .cta-buttons {
@@ -228,7 +197,7 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -272,28 +241,52 @@
         .contact-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            color: var(--text-light);
-            padding: 0.9rem 1.8rem;
+            gap: 0.75rem;
+            background: var(--highlight);
+            color: var(--text-dark);
+            padding: 1.1rem 2.5rem;
             border-radius: 50px;
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .contact-button:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .contact-button:hover {
-            background: rgba(0, 217, 255, 0.1);
-            border-color: var(--highlight);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 217, 255, 0.3);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 217, 255, 0.6);
         }
 
         .contact-button .icon {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-button .cta-text {
+            position: relative;
+            z-index: 1;
         }
 
         /* Steps Section */
@@ -410,7 +403,7 @@
             width: 60px;
             height: 60px;
             background: var(--gradient-primary);
-            color: white;
+            color: var(--text-dark);
             border-radius: 50%;
             font-size: 1.8rem;
             font-weight: 700;
@@ -418,9 +411,10 @@
             box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
         }
 
-        .step-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+        .step-image {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
             filter: drop-shadow(0 2px 8px rgba(0, 217, 255, 0.2));
         }
 
@@ -513,10 +507,10 @@
             box-shadow: 0 12px 40px rgba(0, 217, 255, 0.3);
         }
 
-        .feature-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: white;
+        .feature-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
             filter: drop-shadow(0 4px 12px rgba(0, 217, 255, 0.4));
         }
 
@@ -534,123 +528,6 @@
             line-height: 1.7;
         }
 
-        /* Categories Section */
-        .categories-section {
-            padding: 5rem 0;
-            background: var(--bg-light);
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s ease;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .category-card:nth-child(1) { 
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out 0.1s;
-        }
-        .category-card:nth-child(2) { 
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out 0.2s;
-        }
-        .category-card:nth-child(3) { 
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out 0.3s;
-        }
-        .category-card:nth-child(4) { 
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out 0.4s;
-        }
-
-        .category-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
-
-        .category-card:hover::before {
-            opacity: 0.15;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .category-image {
-            width: 100%;
-            height: 200px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-        }
-
-        .category-image span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .category-content {
-            padding: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .category-card h3 {
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .category-card p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
         /* Footer */
         footer {
             background: var(--gradient-dark);
@@ -660,46 +537,18 @@
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        .footer-section h4 {
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--highlight);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--highlight);
-            transform: translateX(-5px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+        .footer-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .footer-logo {
@@ -710,19 +559,12 @@
             text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
         }
 
-        .tax-number {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .tax-number:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--highlight);
-            transform: scale(1.02);
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
         /* Responsive Design */
@@ -744,19 +586,8 @@
                 margin-bottom: 1.5rem;
             }
 
-            .hero-badges {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.75rem;
-                margin-bottom: 2rem;
-            }
-
-            .badge {
-                width: 100%;
-                max-width: 320px;
-                justify-content: center;
-                font-size: 0.85rem;
-                padding: 0.5rem 1rem;
+            .hero-image {
+                max-width: 350px;
             }
 
             .cta-buttons,
@@ -784,27 +615,29 @@
             }
 
             .steps-container,
-            .features-grid,
-            .categories-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .step-card,
-            .feature-card,
-            .category-card {
+            .feature-card {
                 padding: 1.5rem;
             }
 
             .steps-section,
-            .features-section,
-            .categories-section {
+            .features-section {
                 padding: 3rem 0;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
             }
         }
 
@@ -817,15 +650,14 @@
                 font-size: 0.9rem;
             }
 
-            .badge {
-                font-size: 0.8rem;
-                padding: 0.4rem 0.8rem;
-            }
-
             .cta-button,
             .contact-button {
                 font-size: 0.95rem;
                 padding: 0.85rem 1.2rem;
+            }
+
+            .hero-image {
+                max-width: 280px;
             }
         }
 
@@ -842,10 +674,7 @@
             <div class="header-content">
                 <div class="logo-section">
                     <img src="./logo 2.png" alt="تسوق تقني" class="logo-image">
-                    <div class="logo-text-wrapper">
-                        <div class="logo">تسوق تقني</div>
-                        <div class="logo-subtitle">TECH SHOPPING KSA</div>
-                    </div>
+                    <div class="logo">تسوق تقني</div>
                 </div>
             </div>
         </div>
@@ -855,40 +684,29 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>احتياجاتك التقنية في مكان واحد</h1>
+                <h1>صيانة جوالك في مكانك</h1>
                 <p class="hero-subtitle">
-                    أحدث الأجهزة الذكية والإكسسوارات التقنية بأفضل الأسعار وجودة عالية مع توصيل سريع لجميع أنحاء المملكة
+                    خدمة صيانة جوالات متنقلة سريعة بأيدي احترافية وين ماكنت في الرياض
                 </p>
-                <div class="hero-badges">
-                    <div class="badge">
-                        <span class="badge-icon" style="color: white;">✓</span>
-                        <span>منتجات أصلية 100%</span>
-                    </div>
-                    <div class="badge">
-                        <span class="badge-icon">🚚</span>
-                        <span>شحن مجاني للطلبات +200 ريال</span>
-                    </div>
-                    <div class="badge">
-                        <span class="badge-icon">🔄</span>
-                        <span>إرجاع مجاني خلال 7 أيام</span>
-                    </div>
-                </div>
-                <div class="cta-buttons">
-                    <a href="https://techshoppingksa.com/" class="cta-button">
-                        <span class="cta-text">تسوق الآن</span>
-                        <span style="font-size: 1.5rem;">🛒</span>
-                    </a>
-                </div>
                 <div class="contact-buttons">
-                    <a href="tel:+966594090036" class="contact-button">
+                    <a href="tel:+966501433544" class="contact-button">
                         <span class="icon">📞</span>
-                        <span>اتصل بنا</span>
+                        <span class="cta-text">اتصل بنا</span>
                     </a>
-                    <a href="https://wa.me/966594090036" class="contact-button" target="_blank">
+                    <a href="https://wa.me/966501433544" class="contact-button" target="_blank">
                         <span class="icon">💬</span>
-                        <span>واتساب</span>
+                        <span class="cta-text">واتساب</span>
                     </a>
                 </div>
+                <svg class="hero-image" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="80" y="50" width="120" height="240" rx="20" fill="#1a1a2e" stroke="#00d9ff" stroke-width="3"/>
+                    <rect x="90" y="70" width="100" height="180" fill="#0f3460"/>
+                    <circle cx="140" cy="270" r="15" fill="#00d9ff"/>
+                    <rect x="200" y="80" width="120" height="240" rx="20" fill="#1a1a2e" stroke="#00d9ff" stroke-width="3"/>
+                    <rect x="210" y="100" width="100" height="180" fill="#0f3460"/>
+                    <circle cx="260" cy="300" r="15" fill="#00d9ff"/>
+                    <path d="M160 180 L200 180" stroke="#00d9ff" stroke-width="4" stroke-linecap="round"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -896,25 +714,50 @@
     <!-- Steps Section -->
     <section class="steps-section">
         <div class="container">
-            <h2 class="section-title">كيف تتسوق معنا</h2>
+            <h2 class="section-title">كيف تصلح جوالك معنا</h2>
             <div class="steps-container">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <div class="step-icon">🔍</div>
-                    <h3>تصفح المنتجات</h3>
-                    <p>اختر من بين مئات المنتجات التقنية المتنوعة والحديثة في جميع الفئات</p>
+                    <svg class="step-image" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Phone outline -->
+                        <rect x="25" y="10" width="50" height="80" rx="8" fill="#1a1a2e" stroke="#00d9ff" stroke-width="2"/>
+                        <!-- Screen -->
+                        <rect x="30" y="18" width="40" height="60" rx="2" fill="#00d9ff"/>
+                        <!-- Home button -->
+                        <circle cx="50" cy="82" r="4" fill="#00d9ff"/>
+                        <!-- Screen details -->
+                        <rect x="35" y="23" width="30" height="4" rx="2" fill="#1a1a2e" opacity="0.3"/>
+                        <rect x="35" y="30" width="30" height="3" rx="1.5" fill="#1a1a2e" opacity="0.2"/>
+                        <rect x="35" y="36" width="20" height="3" rx="1.5" fill="#1a1a2e" opacity="0.2"/>
+                    </svg>
+                    <h3>دخل معلومات جهازك</h3>
+                    <p>اختر نوع جهازك والمشكلة اللي تواجهك وبتظهر لك تسعيرة الإصلاح</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <div class="step-icon">🛒</div>
-                    <h3>أضف للسلة</h3>
-                    <p>أضف المنتجات المفضلة لديك وأكمل عملية الشراء بخطوات بسيطة وآمنة</p>
+                    <svg class="step-image" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Map pin -->
+                        <path d="M50 15 C35 15 25 25 25 40 C25 50 50 85 50 85 C50 85 75 50 75 40 C75 25 65 15 50 15 Z" fill="#00d9ff"/>
+                        <!-- Inner circle -->
+                        <circle cx="50" cy="40" r="10" fill="#1a1a2e"/>
+                        <!-- Pin outline -->
+                        <path d="M50 15 C35 15 25 25 25 40 C25 50 50 85 50 85 C50 85 75 50 75 40 C75 25 65 15 50 15 Z" stroke="#1a1a2e" stroke-width="2" fill="none"/>
+                    </svg>
+                    <h3>ارفع طلب الصيانة</h3>
+                    <p>الطلب وصل للفني وبيكون عندك في أقرب وقت</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <div class="step-icon">🚚</div>
-                    <h3>استلم طلبك</h3>
-                    <p>توصيل سريع وآمن لباب منزلك في جميع أنحاء المملكة مع إمكانية الدفع عند الاستلام</p>
+                    <svg class="step-image" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Wrench -->
+                        <path d="M30 70 L20 80 L25 85 L35 75 L38 78 L45 71 L42 68 L30 70 Z" fill="#00d9ff"/>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#00d9ff" stroke-width="5"/>
+                        <path d="M63 37 L75 25 L72 20 L67 23 L65 21 L68 16 L63 13 L51 25" stroke="#00d9ff" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Highlight on wrench head -->
+                        <circle cx="50" cy="50" r="8" fill="#1a1a2e" opacity="0.3"/>
+                    </svg>
+                    <h3>تم إصلاح جوالك</h3>
+                    <p>الفني المحترف بيصلح جوالك وبيرجع زي الجديد</p>
                 </div>
             </div>
         </div>
@@ -923,64 +766,52 @@
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
-            <h2 class="section-title">لماذا تختار تسوق تقني</h2>
+            <h2 class="section-title">ليش تختار تسوق تقني </h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>منتجات أصلية</h3>
-                    <p>جميع منتجاتنا أصلية 100% من موردين معتمدين مع ضمان الجودة</p>
+                    <svg class="feature-image" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Certificate/Badge shape -->
+                        <circle cx="40" cy="35" r="20" fill="#00d9ff"/>
+                        <path d="M30 50 L35 65 L40 55 L45 65 L50 50" fill="#00d9ff"/>
+                        <!-- Star inside -->
+                        <path d="M40 25 L42 32 L49 32 L43 37 L45 44 L40 39 L35 44 L37 37 L31 32 L38 32 Z" fill="#1a1a2e"/>
+                    </svg>
+                    <h3>قطع غيار أصلية</h3>
+                    <p>تنوع خيارات قطع الغيار بناء على ميزانيتك</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>توصيل سريع</h3>
-                    <p>خدمة توصيل سريعة لجميع مناطق المملكة مع إمكانية التتبع المباشر</p>
+                    <svg class="feature-image" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Lightning bolt -->
+                        <path d="M45 10 L25 40 L38 40 L30 70 L55 35 L42 35 L45 10 Z" fill="#00d9ff" stroke="#1a1a2e" stroke-width="2"/>
+                    </svg>
+                    <h3>إصلاح فوري</h3>
+                    <p>نجيك وين ماكنت في الرياض في أسرع وقت</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3>دفع آمن</h3>
-                    <p>طرق دفع متعددة وآمنة مع حماية كاملة لبياناتك المالية</p>
+                    <svg class="feature-image" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Person with tools -->
+                        <circle cx="40" cy="25" r="12" fill="#00d9ff"/>
+                        <!-- Body -->
+                        <path d="M25 70 L30 45 L50 45 L55 70" fill="#00d9ff"/>
+                        <!-- Arms holding wrench -->
+                        <path d="M30 45 L20 55 L25 60 L35 50" fill="#00d9ff"/>
+                        <circle cx="23" cy="58" r="4" fill="#1a1a2e"/>
+                        <!-- Face details -->
+                        <circle cx="36" cy="23" r="2" fill="#1a1a2e"/>
+                        <circle cx="44" cy="23" r="2" fill="#1a1a2e"/>
+                    </svg>
+                    <h3>مهندسين محترفين</h3>
+                    <p>طاقم مهندسينا مؤهلون ومدربون</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>سياسة استرجاع</h3>
-                    <p>إمكانية الاستبدال والاسترجاع خلال فترة محددة بشروط واضحة</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <div class="container">
-            <h2 class="section-title">تسوق حسب الفئة</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-image"><span>📱</span></div>
-                    <div class="category-content">
-                        <h3>مستلزمات الهواتف</h3>
-                        <p>كفرات، حماية شاشة، بكجات حماية كاملة</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><span>🔌</span></div>
-                    <div class="category-content">
-                        <h3>الشواحن والكيابل</h3>
-                        <p>شواحن سريعة، كيابل أصلية، شواحن متنقلة</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><span>🎧</span></div>
-                    <div class="category-content">
-                        <h3>ملحقات الصوت</h3>
-                        <p>سماعات لاسلكية، سبيكرات، سماعات جيمنج</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><span>⌚</span></div>
-                    <div class="category-content">
-                        <h3>ساعات ذكية</h3>
-                        <p>أحدث الساعات الذكية بمميزات متطورة</p>
-                    </div>
+                    <svg class="feature-image" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Shield -->
+                        <path d="M40 10 L15 20 L15 40 C15 55 40 70 40 70 C40 70 65 55 65 40 L65 20 Z" fill="#00d9ff" stroke="#1a1a2e" stroke-width="2"/>
+                        <!-- Checkmark -->
+                        <path d="M28 40 L36 48 L52 32" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                    <h3>ضمان على الإصلاح</h3>
+                    <p>ضمان على القطع يمتد لشهور على حساب القطعة</p>
                 </div>
             </div>
         </div>
@@ -990,46 +821,20 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                        <img src="./logo 2.png" alt="تسوق تقني" style="width: 40px; height: 40px; object-fit: contain;">
-                        <div class="footer-logo">تسوق تقني</div>
-                    </div>
-                    <p style="margin-top: 1rem; line-height: 1.7; color: rgba(255, 255, 255, 0.8);">
-                        علامة تجارية سعودية متخصصة في بيع كل ماهو جديد في الإلكترونيات والهواتف الذكية وملحقاتها
-                    </p>
-                    <div class="tax-number">
-                        <strong>الرقم الضريبي:</strong> 311645596100003
-                    </div>
+                <div class="footer-logo-section">
+                    <img src="./logo 2.png" alt="تسوق تقني" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="footer-logo">تسوق تقني</div>
                 </div>
-                <div class="footer-section">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="https://techshoppingksa.com/ar/p/Eeyp">الدفع والتوصيل</a></li>
-                        <li><a href="https://techshoppingksa.com/ar/p/emxx">سياسة الاستبدال والاسترجاع</a></li>
-                        <li><a href="https://techshoppingksa.com/ar/p/zpXdK">خدمة الصيانة المتنقلة</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>الفئات</h4>
-                    <ul>
-                        <li><a href="https://techshoppingksa.com/ar/category/ADmpEP">مستلزمات الهواتف</a></li>
-                        <li><a href="https://techshoppingksa.com/ar/category/bjoYGY">الشواحن والوصلات</a></li>
-                        <li><a href="https://techshoppingksa.com/ar/category/ZAQKoO">ملحقات الصوت</a></li>
-                        <li><a href="https://techshoppingksa.com/ar/category/vZDpNz">ساعات ذكية</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>تواصل معنا</h4>
-                    <p style="line-height: 2; color: rgba(255, 255, 255, 0.8);">
-                        📞 0594090036<br>
-                        📞 0554822897<br>
-                        📍 الرياض، المملكة العربية السعودية
-                    </p>
-                </div>
+                <a href="https://maroof.sa/234425" target="_blank" style="text-decoration: none; color: rgba(255, 255, 255, 0.8); display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                    <svg class="maroof-badge" style="width: 40px; height: 40px;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" fill="#00d9ff"/>
+                        <text x="30" y="35" font-family="Cairo" font-weight="700" font-size="12" fill="#1a1a2e" text-anchor="middle">معروف</text>
+                    </svg>
+                    <span>موثق لدى معروف</span>
+                </a>
             </div>
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة © 2026 تسوق تقني</p>
+                <p>جميع الحقوق محفوظة © 2024 تسوق تقني</p>
             </div>
         </div>
     </footer>
@@ -1050,7 +855,7 @@
         }, observerOptions);
 
         // Observe all cards
-        document.querySelectorAll('.step-card, .feature-card, .category-card').forEach(card => {
+        document.querySelectorAll('.step-card, .feature-card').forEach(card => {
             observer.observe(card);
         });
 
