@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسوق تقني | وجهتك الأولى للتقنية في السعودية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #00d9ff;
+            --highlight-alt: #00a8cc;
+            --text-light: #ffffff;
+            --text-dark: #1a1a2e;
+            --bg-light: #f8f9fa;
+            --gradient-primary: linear-gradient(135deg, #00d9ff 0%, #0f3460 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 217, 255, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 217, 255, 0.15);
+            --shadow-lg: 0 8px 32px rgba(0, 217, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient-dark);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .logo {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--highlight);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .maroof-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .maroof-badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--highlight);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-dark);
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 120%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+            justify-content: center;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            color: var(--highlight);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .badge-icon {
+            font-size: 1.2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--highlight);
+            color: var(--text-dark);
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 217, 255, 0.6);
+        }
+
+        .cta-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            color: var(--text-light);
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: rgba(0, 217, 255, 0.1);
+            border-color: var(--highlight);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 217, 255, 0.3);
+        }
+
+        .contact-button .icon {
+            font-size: 1.4rem;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 4rem;
+            position: relative;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .step-card:nth-child(1) { animation-delay: 0.1s; }
+        .step-card:nth-child(2) { animation-delay: 0.2s; }
+        .step-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .step-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .step-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 2px 8px rgba(0, 217, 255, 0.2));
+        }
+
+        .step-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 5rem 0;
+            background: var(--gradient-dark);
+            position: relative;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(0,217,255,0.1)"/></svg>');
+            background-size: 40px 40px;
+            opacity: 0.3;
+        }
+
+        .features-section .section-title {
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--highlight);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 217, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            filter: drop-shadow(0 4px 12px rgba(0, 217, 255, 0.4));
+        }
+
+        .feature-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .category-card:hover::before {
+            opacity: 0.15;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+        }
+
+        .category-content {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-dark);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--highlight);
+            transform: translateX(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+
+        .tax-number {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 3rem 0 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .badge {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .cta-buttons,
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .cta-button,
+            .contact-button {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+                padding: 0.9rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .steps-container,
+            .features-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .step-card,
+            .feature-card,
+            .category-card {
+                padding: 1.5rem;
+            }
+
+            .steps-section,
+            .features-section,
+            .categories-section {
+                padding: 3rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .cta-button,
+            .contact-button {
+                font-size: 0.95rem;
+                padding: 0.85rem 1.2rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="./logo 2.png" alt="تسوق تقني" class="logo-image">
+                    <div class="logo-text-wrapper">
+                        <div class="logo">تسوق تقني</div>
+                        <div class="logo-subtitle">TECH SHOPPING KSA</div>
+                    </div>
+                </div>
+                <a href="https://maroof.sa/" class="maroof-badge">
+                    ✓ موثق لدى معروف
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>احتياجاتك التقنية في مكان واحد</h1>
+                <p class="hero-subtitle">
+                    أحدث الأجهزة الذكية والإكسسوارات التقنية بأفضل الأسعار وجودة عالية مع توصيل سريع لجميع أنحاء المملكة
+                </p>
+                <div class="hero-badges">
+                    <div class="badge">
+                        <span class="badge-icon" style="color: white;">✓</span>
+                        <span>منتجات أصلية 100%</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🚚</span>
+                        <span>شحن مجاني للطلبات +200 ريال</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🔄</span>
+                        <span>إرجاع مجاني خلال 7 أيام</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://techshoppingksa.com/" class="cta-button">
+                        <span class="cta-text">تسوق الآن</span>
+                        <span style="font-size: 1.5rem;">🛒</span>
+                    </a>
+                </div>
+                <div class="contact-buttons">
+                    <a href="tel:+966594090036" class="contact-button">
+                        <span class="icon">📞</span>
+                        <span>اتصل بنا: 0594090036</span>
+                    </a>
+                    <a href="https://wa.me/966594090036" class="contact-button" target="_blank">
+                        <span class="icon">💬</span>
+                        <span>واتساب: 0594090036</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section">
+        <div class="container">
+            <h2 class="section-title">كيف تتسوق معنا</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>تصفح المنتجات</h3>
+                    <p>اختر من بين مئات المنتجات التقنية المتنوعة والحديثة في جميع الفئات</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🛒</div>
+                    <h3>أضف للسلة</h3>
+                    <p>أضف المنتجات المفضلة لديك وأكمل عملية الشراء بخطوات بسيطة وآمنة</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🚚</div>
+                    <h3>استلم طلبك</h3>
+                    <p>توصيل سريع وآمن لباب منزلك في جميع أنحاء المملكة مع إمكانية الدفع عند الاستلام</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار تسوق تقني</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>منتجات أصلية</h3>
+                    <p>جميع منتجاتنا أصلية 100% من موردين معتمدين مع ضمان الجودة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>توصيل سريع</h3>
+                    <p>خدمة توصيل سريعة لجميع مناطق المملكة مع إمكانية التتبع المباشر</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>دفع آمن</h3>
+                    <p>طرق دفع متعددة وآمنة مع حماية كاملة لبياناتك المالية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>سياسة استرجاع</h3>
+                    <p>إمكانية الاستبدال والاسترجاع خلال فترة محددة بشروط واضحة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">تسوق حسب الفئة</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">📱</div>
+                    <div class="category-content">
+                        <h3>مستلزمات الهواتف</h3>
+                        <p>كفرات، حماية شاشة، بكجات حماية كاملة</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">🔌</div>
+                    <div class="category-content">
+                        <h3>الشواحن والكيابل</h3>
+                        <p>شواحن سريعة، كيابل أصلية، شواحن متنقلة</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">🎧</div>
+                    <div class="category-content">
+                        <h3>ملحقات الصوت</h3>
+                        <p>سماعات لاسلكية، سبيكرات، سماعات جيمنج</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">⌚</div>
+                    <div class="category-content">
+                        <h3>ساعات ذكية</h3>
+                        <p>أحدث الساعات الذكية بمميزات متطورة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <img src="./logo 2.png" alt="تسوق تقني" style="width: 40px; height: 40px; object-fit: contain;">
+                        <div class="footer-logo">تسوق تقني</div>
+                    </div>
+                    <p style="margin-top: 1rem; line-height: 1.7; color: rgba(255, 255, 255, 0.8);">
+                        علامة تجارية سعودية متخصصة في بيع كل ماهو جديد في الإلكترونيات والهواتف الذكية وملحقاتها
+                    </p>
+                    <div class="tax-number">
+                        <strong>الرقم الضريبي:</strong> 311645596100003
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="https://techshoppingksa.com/ar/p/Eeyp">الدفع والتوصيل</a></li>
+                        <li><a href="https://techshoppingksa.com/ar/p/emxx">سياسة الاستبدال والاسترجاع</a></li>
+                        <li><a href="https://techshoppingksa.com/ar/p/zpXdK">خدمة الصيانة المتنقلة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>الفئات</h4>
+                    <ul>
+                        <li><a href="https://techshoppingksa.com/ar/category/ADmpEP">مستلزمات الهواتف</a></li>
+                        <li><a href="https://techshoppingksa.com/ar/category/bjoYGY">الشواحن والوصلات</a></li>
+                        <li><a href="https://techshoppingksa.com/ar/category/ZAQKoO">ملحقات الصوت</a></li>
+                        <li><a href="https://techshoppingksa.com/ar/category/vZDpNz">ساعات ذكية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p style="line-height: 2; color: rgba(255, 255, 255, 0.8);">
+                        📞 0594090036<br>
+                        📞 0554822897<br>
+                        📍 الرياض، المملكة العربية السعودية
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 تسوق تقني</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.step-card, .feature-card, .category-card').forEach(card => {
+            card.classList.add('animate-on-scroll');
+            observer.observe(card);
+        });
+
+        // Smooth scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
