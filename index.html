@@ -75,35 +75,12 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            animation: logoFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
         }
 
         .logo-image {
             width: 50px;
             height: 50px;
             object-fit: contain;
-            animation: rotatePulse 4s ease-in-out infinite;
-        }
-
-        @keyframes rotatePulse {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-            }
-            25% {
-                transform: scale(1.1) rotate(-5deg);
-            }
-            75% {
-                transform: scale(1.1) rotate(5deg);
-            }
         }
 
         .logo-text-wrapper {
@@ -119,16 +96,6 @@
             font-weight: 900;
             color: var(--text-light);
             text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
-            animation: glowPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
-            }
-            50% {
-                text-shadow: 0 0 30px rgba(0, 217, 255, 0.8), 0 0 40px rgba(0, 217, 255, 0.5);
-            }
         }
 
         .logo-subtitle {
@@ -137,16 +104,6 @@
             font-weight: 500;
             letter-spacing: 2px;
             text-align: center;
-            animation: fadeInOut 3s ease-in-out infinite;
-        }
-
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0.7;
-            }
-            50% {
-                opacity: 1;
-            }
         }
 
         /* Hero Section */
@@ -169,32 +126,6 @@
             height: 200%;
             background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
             animation: pulse 8s ease-in-out infinite;
-        }
-
-        /* Floating particles animation */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(2px 2px at 20% 30%, rgba(0, 217, 255, 0.3), transparent),
-                radial-gradient(2px 2px at 60% 70%, rgba(0, 217, 255, 0.3), transparent),
-                radial-gradient(3px 3px at 50% 50%, rgba(0, 217, 255, 0.2), transparent),
-                radial-gradient(2px 2px at 80% 10%, rgba(0, 217, 255, 0.3), transparent);
-            background-size: 200% 200%;
-            animation: particlesFloat 20s ease-in-out infinite;
-        }
-
-        @keyframes particlesFloat {
-            0%, 100% {
-                background-position: 0% 0%, 100% 100%, 50% 50%, 80% 10%;
-            }
-            50% {
-                background-position: 100% 100%, 0% 0%, 25% 75%, 20% 90%;
-            }
         }
 
         @keyframes pulse {
@@ -228,18 +159,6 @@
             margin-bottom: 1.5rem;
             line-height: 1.2;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            animation: titleSlideIn 1s ease-out;
-        }
-
-        @keyframes titleSlideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .hero-subtitle {
@@ -274,50 +193,18 @@
             color: var(--highlight);
             font-size: 0.95rem;
             font-weight: 600;
-            animation: badgeFloat 3s ease-in-out infinite;
             transition: all 0.3s ease;
-        }
-
-        .badge:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .badge:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .badge:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes badgeFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
         }
 
         .badge:hover {
             background: rgba(0, 217, 255, 0.2);
             border-color: var(--highlight);
-            transform: scale(1.05) translateY(-5px) !important;
+            transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
         }
 
         .badge-icon {
             font-size: 1.2rem;
-            animation: iconSpin 3s ease-in-out infinite;
-        }
-
-        @keyframes iconSpin {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(10deg);
-            }
         }
 
         .cta-buttons {
@@ -344,16 +231,6 @@
             box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
             position: relative;
             overflow: hidden;
-            animation: buttonPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes buttonPulse {
-            0%, 100% {
-                box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
-            }
-            50% {
-                box-shadow: 0 6px 30px rgba(0, 217, 255, 0.6);
-            }
         }
 
         .cta-button::before {
@@ -377,7 +254,6 @@
         .cta-button:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 30px rgba(0, 217, 255, 0.6);
-            animation: none;
         }
 
         .cta-text {
@@ -407,23 +283,6 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .contact-button:hover::before {
-            left: 100%;
         }
 
         .contact-button:hover {
@@ -435,16 +294,6 @@
 
         .contact-button .icon {
             font-size: 1.4rem;
-            animation: iconBounce 2s ease-in-out infinite;
-        }
-
-        @keyframes iconBounce {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
         }
 
         /* Steps Section */
@@ -463,18 +312,6 @@
             margin-bottom: 4rem;
             position: relative;
             width: 100%;
-            animation: titleReveal 1s ease-out;
-        }
-
-        @keyframes titleReveal {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
         }
 
         .section-title::after {
@@ -487,16 +324,6 @@
             height: 4px;
             background: var(--gradient-primary);
             border-radius: 2px;
-            animation: lineExpand 1s ease-out 0.5s both;
-        }
-
-        @keyframes lineExpand {
-            from {
-                width: 0;
-            }
-            to {
-                width: 80px;
-            }
         }
 
         .steps-container {
@@ -573,35 +400,12 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
-            animation: numberFloat 2s ease-in-out infinite;
-        }
-
-        @keyframes numberFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-10px) rotate(5deg);
-            }
         }
 
         .step-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             filter: drop-shadow(0 2px 8px rgba(0, 217, 255, 0.2));
-            animation: iconWiggle 3s ease-in-out infinite;
-        }
-
-        @keyframes iconWiggle {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            25% {
-                transform: rotate(-10deg);
-            }
-            75% {
-                transform: rotate(10deg);
-            }
         }
 
         .step-card h3 {
@@ -610,11 +414,6 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .step-card:hover h3 {
-            color: var(--highlight-alt);
         }
 
         .step-card p {
@@ -641,16 +440,6 @@
             background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(0,217,255,0.1)"/></svg>');
             background-size: 40px 40px;
             opacity: 0.3;
-            animation: backgroundMove 30s linear infinite;
-        }
-
-        @keyframes backgroundMove {
-            from {
-                transform: translateX(0) translateY(0);
-            }
-            to {
-                transform: translateX(40px) translateY(40px);
-            }
         }
 
         .features-section .section-title {
@@ -674,26 +463,6 @@
             text-align: center;
             transition: all 0.4s ease;
             animation: fadeInUp 0.6s ease-out both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.2) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-            border-radius: 50%;
-        }
-
-        .feature-card:hover::before {
-            width: 400px;
-            height: 400px;
         }
 
         .feature-card:nth-child(1) { animation-delay: 0.1s; }
@@ -704,7 +473,7 @@
         .feature-card:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--highlight);
-            transform: translateY(-8px) rotate(2deg);
+            transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(0, 217, 255, 0.3);
         }
 
@@ -713,18 +482,6 @@
             margin-bottom: 1.5rem;
             color: white;
             filter: drop-shadow(0 4px 12px rgba(0, 217, 255, 0.4));
-            animation: iconPulse 2s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes iconPulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
         }
 
         .feature-card h3 {
@@ -733,16 +490,12 @@
             font-weight: 700;
             color: var(--text-light);
             margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
         }
 
         .feature-card p {
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.95rem;
             line-height: 1.7;
-            position: relative;
-            z-index: 1;
         }
 
         /* Categories Section */
@@ -816,50 +569,11 @@
             height: 200%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             transform: translate(-50%, -50%);
-            animation: imageGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes imageGlow {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.2);
-            }
         }
 
         .category-image span {
             position: relative;
             z-index: 1;
-            animation: categoryIconFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes categoryIconFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-10px) rotate(-5deg);
-            }
-            75% {
-                transform: translateY(-10px) rotate(5deg);
-            }
-        }
-
-        .category-card:hover .category-image span {
-            animation: categoryIconSpin 0.6s ease-in-out;
-        }
-
-        @keyframes categoryIconSpin {
-            0% {
-                transform: rotate(0deg) scale(1);
-            }
-            50% {
-                transform: rotate(180deg) scale(1.2);
-            }
-            100% {
-                transform: rotate(360deg) scale(1);
-            }
         }
 
         .category-content {
@@ -874,11 +588,6 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .category-card:hover h3 {
-            color: var(--highlight-alt);
         }
 
         .category-card p {
@@ -901,38 +610,12 @@
             margin-bottom: 2rem;
         }
 
-        .footer-section {
-            animation: fadeInUp 0.6s ease-out both;
-        }
-
-        .footer-section:nth-child(1) { animation-delay: 0.1s; }
-        .footer-section:nth-child(2) { animation-delay: 0.2s; }
-        .footer-section:nth-child(3) { animation-delay: 0.3s; }
-        .footer-section:nth-child(4) { animation-delay: 0.4s; }
-
         .footer-section h4 {
             font-family: 'Cairo', sans-serif;
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--highlight);
-            position: relative;
-            display: inline-block;
-        }
-
-        .footer-section h4::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--highlight);
-            transition: width 0.3s ease;
-        }
-
-        .footer-section:hover h4::after {
-            width: 100%;
         }
 
         .footer-section ul {
@@ -948,25 +631,11 @@
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
-            position: relative;
-        }
-
-        .footer-section ul li a::before {
-            content: '◄';
-            position: absolute;
-            right: -20px;
-            opacity: 0;
-            transition: all 0.3s ease;
         }
 
         .footer-section ul li a:hover {
             color: var(--highlight);
             transform: translateX(-5px);
-        }
-
-        .footer-section ul li a:hover::before {
-            right: -25px;
-            opacity: 1;
         }
 
         .footer-bottom {
@@ -975,16 +644,6 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
-            animation: fadeIn 1s ease-out 0.5s both;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         .footer-logo {
@@ -993,7 +652,6 @@
             font-weight: 900;
             color: var(--text-light);
             text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
-            animation: glowPulse 2s ease-in-out infinite;
         }
 
         .tax-number {
@@ -1130,24 +788,6 @@
         /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--primary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-primary);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--highlight);
         }
     </style>
 </head>
@@ -1384,47 +1024,6 @@
                 }
             });
         });
-
-        // Add parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Add cursor trail effect
-        document.addEventListener('mousemove', (e) => {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trail.style.cssText = `
-                position: fixed;
-                width: 8px;
-                height: 8px;
-                background: radial-gradient(circle, rgba(0, 217, 255, 0.6) 0%, transparent 70%);
-                border-radius: 50%;
-                pointer-events: none;
-                left: ${e.clientX - 4}px;
-                top: ${e.clientY - 4}px;
-                animation: trailFade 0.8s ease-out forwards;
-                z-index: 9999;
-            `;
-            document.body.appendChild(trail);
-            setTimeout(() => trail.remove(), 800);
-        });
-
-        // Add animation for trail fade
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes trailFade {
-                to {
-                    opacity: 0;
-                    transform: scale(2);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
