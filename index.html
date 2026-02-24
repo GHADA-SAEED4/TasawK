@@ -36,6 +36,17 @@
             padding: 0 2rem;
         }
 
+        /* --- الأنميشن الأساسي (Reveal) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* --- 2. الهيدر (Header) --- */
         header {
             background: linear-gradient(135deg, #0d1628 0%, #1a1a2e 60%, #16213e 100%);
@@ -64,12 +75,14 @@
             position: relative; overflow: hidden;
         }
         .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%; }
+        
         .hero h1 {
             font-family: 'Cairo', sans-serif; font-size: 3.5rem; font-weight: 900;
             color: var(--text-light); margin-bottom: 1.2rem; line-height: 1.2;
         }
         .hero-subtitle { font-size: 1.6rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 2.5rem; font-weight: 600; }
         .contact-buttons { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+        
         .contact-button {
             display: inline-flex; align-items: center; gap: 0.75rem;
             background: var(--bg-white); color: var(--text-dark);
@@ -148,7 +161,7 @@
 
     <section class="hero">
         <div class="hero-inner container">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <h1>صيانة جوالك في مكانك</h1>
                 <p class="hero-subtitle">خدمة صيانة جوالات متنقلة سريعة بأيدي احترافية وين ماكنت في الرياض</p>
                 <div class="contact-buttons">
@@ -162,7 +175,7 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-image-wrapper">
+            <div class="hero-image-wrapper reveal">
                 <img src="./heroPhoto.png" alt="صيانة الجوالات" class="hero-image">
             </div>
         </div>
@@ -170,30 +183,30 @@
 
     <section class="services-section">
         <div class="container">
-            <h2 class="section-title">ماذا يمكننا أن نصلح لك؟</h2>
+            <h2 class="section-title reveal">ماذا يمكننا أن نصلح لك؟</h2>
             <div class="services-grid">
-                <div class="neon-box">
+                <div class="neon-box reveal">
                     <i class="fa-solid fa-mobile-screen-button"></i>
                     <div>
                         <h4>إصلاح الشاشة والزجاج</h4>
                         <p>تغيير الشاشات المكسورة أو التالفة بأخرى ذات جودة عالية وبسرعة فائقة.</p>
                     </div>
                 </div>
-                <div class="neon-box">
+                <div class="neon-box reveal">
                     <i class="fa-solid fa-battery-three-quarters"></i>
                     <div>
                         <h4>تبديل البطارية</h4>
                         <p>هل بطاريتك تنفد بسرعة؟ نقوم بتبديلها ببطارية جديدة تدوم طويلاً.</p>
                     </div>
                 </div>
-                <div class="neon-box">
+                <div class="neon-box reveal">
                     <i class="fa-solid fa-plug-circle-bolt"></i>
                     <div>
                         <h4>إصلاح مدخل الشحن</h4>
                         <p>حل مشاكل عدم الشحن أو التوصيل بالكمبيوتر عبر تغيير مدخل الشحن.</p>
                     </div>
                 </div>
-                <div class="neon-box">
+                <div class="neon-box reveal">
                     <i class="fa-solid fa-camera"></i>
                     <div>
                         <h4>إصلاح الكاميرا</h4>
@@ -206,19 +219,19 @@
 
     <section class="why-us-section">
         <div class="container">
-            <h2 class="section-title">ليش تختارنا؟</h2>
+            <h2 class="section-title reveal">ليش تختارنا؟</h2>
             <div class="why-us-grid">
-                <div>
+                <div class="reveal">
                     <div class="icon-circle"><i class="fa-solid fa-microchip" style="font-size: 2.5rem; color: var(--primary);"></i></div>
                     <h3>قطع غيار أصلية</h3>
                     <p>نوفر لك أفضل قطع الغيار الأصلية لضمان عمل جهازك بكفاءة عالية.</p>
                 </div>
-                <div>
+                <div class="reveal">
                     <div class="icon-circle"><i class="fa-solid fa-user-gear" style="font-size: 2.5rem; color: var(--primary);"></i></div>
                     <h3>مهندسون متخصصون</h3>
                     <p>فريقنا مكون من فنيين ومهندسين ذوي خبرة طويلة في صيانة أعطال الجوال.</p>
                 </div>
-                <div>
+                <div class="reveal">
                     <div class="icon-circle"><i class="fa-solid fa-file-shield" style="font-size: 2.5rem; color: var(--primary);"></i></div>
                     <h3>ضمان معتمد</h3>
                     <p>نقدم ضماناً حقيقياً على جميع خدمات الصيانة لضمان حقك وراحتك.</p>
@@ -239,6 +252,28 @@
             <p>جميع الحقوق محفوظة © 2026 تسوق تقني</p>
         </div>
     </footer>
+
+    <script>
+        // كود تشغيل الأنميشن عند ظهور العناصر على الشاشة
+        const observerOptions = {
+            threshold: 0.1, // يبدأ الأنميشن بمجرد ظهور 10% من العنصر
+            rootMargin: '0px 0px -50px 0px' 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // بمجرد ظهوره، نتوقف عن مراقبته ليبقى ظاهراً
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
