@@ -59,11 +59,6 @@
         }
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         .logo-image { height: 48px; width: auto; object-fit: contain; }
-        .header-maroof {
-            display: flex; align-items: center; gap: 0.6rem;
-            text-decoration: none; color: rgba(255,255,255,0.85);
-            font-weight: 600; font-size: 0.88rem; font-family: 'Cairo', sans-serif;
-        }
         .header-maroof img { width: 55px; height: 55px; object-fit: contain; }
 
         /* --- 3. قسم الهيرو (Hero) --- */
@@ -75,14 +70,12 @@
             position: relative; overflow: hidden;
         }
         .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%; }
-        
         .hero h1 {
             font-family: 'Cairo', sans-serif; font-size: 3.5rem; font-weight: 900;
             color: var(--text-light); margin-bottom: 1.2rem; line-height: 1.2;
         }
         .hero-subtitle { font-size: 1.6rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 2.5rem; font-weight: 600; }
         .contact-buttons { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-        
         .contact-button {
             display: inline-flex; align-items: center; gap: 0.75rem;
             background: var(--bg-white); color: var(--text-dark);
@@ -91,16 +84,59 @@
             box-shadow: 0 4px 20px rgba(0,217,255,0.4);
         }
         .contact-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 30px rgba(0,217,255,0.6); }
-        .contact-button.whatsapp i, .contact-button.whatsapp span { color: #25D366; }
+        .contact-button.whatsapp i , .contact-button.whatsapp span { color: #25D366; }
         .hero-image { width: 100%; max-width: 460px; filter: drop-shadow(0 10px 50px rgba(0,217,255,0.5)); }
 
-        /* --- 4. عناوين السكاشن --- */
+        /* --- 4. سكشن أنواع الجوالات (Brands Section) --- */
+        .brands-section {
+            padding: 100px 0;
+            background: var(--bg-white);
+        }
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+        .brand-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .brand-card i {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .brand-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+        .brand-card:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 5px 15px rgba(0,217,255,0.2);
+            transform: translateY(-5px);
+        }
+        /* ألوان الأيقونات الخاصة بالبراندات */
+        .icon-apple { color: #555; }
+        .icon-samsung { color: #034ea2; }
+        .icon-huawei { color: #ed1c24; }
+        .icon-ipad { color: #222; }
+
+        /* --- 5. عناوين السكاشن --- */
         .section-title {
-            text-align: center; font-family: 'Cairo', sans-serif; font-size: 2.8rem;
-            margin-bottom: 70px; color: var(--primary); font-weight: 800;
+            text-align: center;
+            font-family: 'Cairo', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 70px;
+            color: var(--primary);
+            font-weight: 800;
         }
 
-        /* --- 5. قسم الخدمات (Services Grid) --- */
+        /* --- 6. قسم الخدمات (Services) --- */
         .services-section { padding: 100px 0; background: #ffffff; }
         .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
         .neon-box {
@@ -115,7 +151,7 @@
         .neon-box h4 { font-family: 'Cairo', sans-serif; font-size: 1.4rem; margin-bottom: 8px; color: var(--primary); }
         .neon-box p { color: #555; line-height: 1.6; }
 
-        /* --- 6. قسم ليش تختارنا (Why Us) --- */
+        /* --- 7. قسم ليش تختارنا (Why Us) --- */
         .why-us-section { padding: 100px 0; background: #ffffff; border-top: 1px solid #eee; }
         .why-us-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
         .icon-circle {
@@ -127,7 +163,7 @@
         .why-us-grid h3 { font-family: 'Cairo', sans-serif; font-size: 1.6rem; margin-bottom: 15px; color: var(--primary); }
         .why-us-grid p { color: #666; line-height: 1.7; font-size: 1.05rem; }
 
-        /* --- 7. الفوتر (Footer) --- */
+        /* --- 8. الفوتر (Footer) --- */
         footer {
             background: linear-gradient(135deg, #0d1628 0%, #1a1a2e 60%, #16213e 100%);
             color: var(--text-light); padding: 2.5rem 0 1.5rem;
@@ -136,18 +172,19 @@
         .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
 
-        /* --- 8. التجاوب (Responsive) --- */
+        /* --- 9. التجاوب (Responsive) --- */
         @media (max-width: 991px) {
             .hero-inner { flex-direction: column; text-align: center; }
             .hero h1 { font-size: 2.5rem; }
             .hero-subtitle { font-size: 1.2rem; }
             .contact-buttons { justify-content: center; }
-            .header-content span{ font-size: 10px; }
-            /* تعديل لجعل الخدمات وليش تختارنا عنصر واحد في الصف */
+            .brands-grid { grid-template-columns: repeat(2, 1fr); }
             .services-grid { grid-template-columns: 1fr; }
             .why-us-grid { grid-template-columns: 1fr; }
-            
             .section-title { font-size: 2.2rem; }
+        }
+        @media (max-width: 480px) {
+            .brands-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -180,6 +217,30 @@
             </div>
             <div class="hero-image-wrapper reveal">
                 <img src="./heroPhoto.png" alt="صيانة الجوالات" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="section-title reveal">صيانة جميع أنواع الجوالات</h2>
+            <div class="brands-grid reveal">
+                <div class="brand-card">
+                    <i class="fa-brands fa-apple icon-apple"></i>
+                    <h3>آيفون</h3>
+                </div>
+                <div class="brand-card">
+                    <i class="fa-solid fa-mobile-screen icon-samsung"></i>
+                    <h3>سامسونج</h3>
+                </div>
+                <div class="brand-card">
+                    <i class="fa-solid fa-mobile-button icon-huawei"></i>
+                    <h3>هواوي</h3>
+                </div>
+                <div class="brand-card">
+                    <i class="fa-solid fa-tablet-screen-button icon-ipad"></i>
+                    <h3>آيباد</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -256,11 +317,7 @@
     </footer>
 
     <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px' 
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
